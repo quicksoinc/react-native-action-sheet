@@ -7,7 +7,7 @@ import {
   TouchableWithoutFeedbackProps,
 } from 'react-native';
 
-// This TouchableOpacity has the same staic method of TouchableNativeFeedback
+// This TouchableOpacity has the same static method of TouchableNativeFeedback
 class CustomTouchableOpacity extends React.Component {
   static SelectableBackground = () => ({});
   static SelectableBackgroundBorderless = () => ({});
@@ -20,6 +20,7 @@ class CustomTouchableOpacity extends React.Component {
 
 const TouchableComponent = Platform.select({
   web: CustomTouchableOpacity,
+  ios: CustomTouchableOpacity,
   default: Platform.Version <= 20 ? CustomTouchableOpacity : TouchableNativeFeedback,
 });
 
