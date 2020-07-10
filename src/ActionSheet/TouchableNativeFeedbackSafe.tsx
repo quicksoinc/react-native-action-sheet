@@ -20,6 +20,7 @@ class CustomTouchableOpacity extends React.Component {
 
 const TouchableComponent = Platform.select({
   web: CustomTouchableOpacity,
+  // Override default iOS behavior.
   ios: CustomTouchableOpacity,
   default: Platform.Version <= 20 ? CustomTouchableOpacity : TouchableNativeFeedback,
 });
